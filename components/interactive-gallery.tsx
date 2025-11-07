@@ -31,22 +31,22 @@ const products = [
   },
   {
     id: 5,
-    name: "Foundation",
-    image: "/premium-liquid-foundation-bottle-luxury-packaging.jpg",
-    category: "Makeup",
-    featured: true,
-  },
-  {
-    id: 6,
     name: "Eye Shadow",
     image: "/luxury-eyeshadow-palette-shimmer-gold-bronze.jpg",
     category: "Makeup",
   },
   {
-    id: 7,
+    id: 6,
     name: "Face Cream",
     image: "/luxury-face-cream-jar-gold-black-elegant.jpg",
     category: "Skincare",
+  },
+  {
+    id: 7,
+    name: "Foundation",
+    image: "/premium-liquid-foundation-bottle-luxury-packaging.jpg",
+    category: "Makeup",
+    featured: true,
   },
   {
     id: 8,
@@ -64,42 +64,15 @@ const products = [
 
 export default function InteractiveGallery() {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
-  const [positions, setPositions] = useState<Record<number, { x: number; y: number }>>({})
-
-  useEffect(() => {
-    const initialPositions: Record<number, { x: number; y: number }> = {}
-    products.forEach((product) => {
-      initialPositions[product.id] = {
-        x: Math.random() * 20 - 10,
-        y: Math.random() * 20 - 10,
-      }
-    })
-    setPositions(initialPositions)
-
-    const interval = setInterval(() => {
-      setPositions((prev) => {
-        const updated = { ...prev }
-        products.forEach((product) => {
-          updated[product.id] = {
-            x: Math.random() * 20 - 10,
-            y: Math.random() * 20 - 10,
-          }
-        })
-        return updated
-      })
-    }, 4000)
-
-    return () => clearInterval(interval)
-  }, [])
 
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-visible">
       {/* Background grid effect */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-[#BBA14F]/20 via-transparent to-transparent"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto z-10">
+      <div className="relative max-w-7xl mx-auto z-10 overflow-visible">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-sans">
@@ -110,43 +83,52 @@ export default function InteractiveGallery() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4 py-8 md:py-12 overflow-visible" style={{ gridAutoRows: 'minmax(300px, auto)' }}>
           {products.map((product, index) => {
             const isFeatured = product.featured
             const isHovered = hoveredId === product.id
-            const position = positions[product.id] || { x: 0, y: 0 }
+            
+            // Create staggered effect: alternate up and down based on column position
+            // Columns 0,2 go up; Columns 1,3 go down
+            // Reduced offset to prevent clipping
+            const columnIndex = index % 4
+            const staggerOffset = isFeatured 
+              ? 0 
+              : (columnIndex === 0 || columnIndex === 2 ? '-30px' : '30px')
 
             return (
               <div
                 key={product.id}
                 className={`relative group cursor-pointer transition-all duration-700 ease-out
-                  ${isFeatured ? "md:col-span-2 md:row-span-2" : ""}
+                  ${isFeatured ? "md:col-span-2" : ""}
                   ${isHovered ? "z-50" : "z-10"}
                 `}
                 onMouseEnter={() => setHoveredId(product.id)}
                 onMouseLeave={() => setHoveredId(null)}
                 style={{
-                  transform: isHovered
-                    ? "scale(1.05) translateZ(50px)"
-                    : `translateX(${position.x}px) translateY(${position.y}px) scale(1)`,
+                  transform: isHovered 
+                    ? `scale(1.02) translateY(${staggerOffset})` 
+                    : `translateY(${staggerOffset})`,
                   transition: "transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
                 }}
               >
                 <div
-                  className="relative w-full overflow-hidden rounded-2xl bg-black/40 backdrop-blur-sm
-                    border border-[#BBA14F]/20 hover:border-[#BBA14F]/60 transition-all duration-500
+                  className="relative w-full overflow-hidden rounded-xl bg-black/40 backdrop-blur-sm
+                    border border-[#BBA14F]/10 hover:border-[#BBA14F]/50 transition-all duration-500
                     shadow-lg hover:shadow-2xl hover:shadow-[#BBA14F]/20"
                   style={{
-                    aspectRatio: isFeatured ? "1" : "3/4",
+                    aspectRatio: isFeatured ? "16/10" : "3/4",
+                    minHeight: isFeatured ? "400px" : "300px",
                   }}
                 >
-                  {/* Image - using object-cover to maintain aspect ratio */}
+                  {/* Image - using object-cover with object-position center to show full images */}
                   <Image
                     src={product.image || "/placeholder.svg"}
                     alt={product.name}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     priority={isFeatured}
+                    sizes={isFeatured ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, 25vw"}
                   />
 
                   {/* Gradient Overlay */}

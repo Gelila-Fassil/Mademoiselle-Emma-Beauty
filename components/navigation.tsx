@@ -9,18 +9,26 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-lg border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-[#BBA14F] rounded-full flex items-center justify-center">
-            <span className="text-black font-bold text-lg">ME</span>
-          </div>
-          <span className="text-white font-light text-xl tracking-widest">MADEMOISELLE</span>
-        </div>
+        <a href="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
+          <img
+            src="/cosmologo.jpg"
+            alt="Mademoiselle Logo"
+            className="object-contain flex-shrink-0"
+            style={{ 
+              width: '200px', 
+              height: 'auto',
+              backgroundColor: 'transparent',
+              mixBlendMode: 'normal'
+            }}
+          />
+          {/* <span className="text-white font-light text-xl tracking-widest">MADEMOISELLE</span> */}
+        </a>
 
         <div className="hidden md:flex items-center gap-8">
-          <a href="#" className="text-white/70 hover:text-[#BBA14F] transition text-sm uppercase tracking-wide">
+          <a href="/" className="text-white/70 hover:text-[#BBA14F] transition text-sm uppercase tracking-wide">
             Shop
           </a>
-          <a href="#" className="text-white/70 hover:text-[#BBA14F] transition text-sm uppercase tracking-wide">
+          <a href="/about" className="text-white/70 hover:text-[#BBA14F] transition text-sm uppercase tracking-wide">
             About
           </a>
           <a href="#" className="text-white/70 hover:text-[#BBA14F] transition text-sm uppercase tracking-wide">
@@ -41,10 +49,10 @@ export default function Navigation() {
 
       {isOpen && (
         <div className="md:hidden bg-black/80 backdrop-blur-lg border-t border-white/5 p-4 space-y-4">
-          <a href="#" className="block text-white/70 hover:text-[#BBA14F] transition uppercase tracking-wide">
+          <a href="/" className="block text-white/70 hover:text-[#BBA14F] transition uppercase tracking-wide">
             Shop
           </a>
-          <a href="#" className="block text-white/70 hover:text-[#BBA14F] transition uppercase tracking-wide">
+          <a href="/about" className="block text-white/70 hover:text-[#BBA14F] transition uppercase tracking-wide">
             About
           </a>
           <a href="#" className="block text-white/70 hover:text-[#BBA14F] transition uppercase tracking-wide">
