@@ -97,9 +97,10 @@ export default function InteractiveGallery() {
               : (columnIndex === 0 || columnIndex === 2 ? '-30px' : '30px')
 
             return (
-              <div
+              <a
                 key={product.id}
-                className={`relative group cursor-pointer transition-all duration-700 ease-out
+                href="/collections"
+                className={`relative group cursor-pointer transition-all duration-700 ease-out block
                   ${isFeatured ? "md:col-span-2" : ""}
                   ${isHovered ? "z-50" : "z-10"}
                 `}
@@ -169,14 +170,15 @@ export default function InteractiveGallery() {
                     </h3>
 
                     {/* View Button */}
-                    <button
+                    <a
+                      href="/collections"
                       className="mt-3 w-full py-2 px-4 bg-[#BBA14F]/10 hover:bg-[#BBA14F]/30
                         border border-[#BBA14F]/40 hover:border-[#BBA14F] text-[#BBA14F]
                         rounded-lg font-semibold text-sm transition-all duration-300
-                        transform group-hover:translate-y-0 translate-y-2 opacity-0 group-hover:opacity-100"
+                        transform group-hover:translate-y-0 translate-y-2 opacity-0 group-hover:opacity-100 inline-flex items-center justify-center"
                     >
                       View Product
-                    </button>
+                    </a>
                   </div>
 
                   {/* Featured badge */}
@@ -194,20 +196,21 @@ export default function InteractiveGallery() {
                     </div>
                   )}
                 </div>
-              </div>
+              </a>
             )
           })}
         </div>
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <button
+          <a
+            href="/collections"
             className="px-8 py-4 bg-[#BBA14F] hover:bg-[#BBA14F]/90 text-black font-bold
               rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#BBA14F]/50
-              transform hover:scale-105"
+              transform hover:scale-105 inline-flex items-center justify-center"
           >
             Explore Full Catalog
-          </button>
+          </a>
         </div>
       </div>
     </section>

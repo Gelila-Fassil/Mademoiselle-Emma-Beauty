@@ -10,7 +10,7 @@ const milestones = [
     title: "The Beginning",
     description: "Founded with a vision to revolutionize luxury beauty",
     icon: Rocket,
-    image: "/luxury-perfume-bottle-gold-lighting.jpg",
+    image: "/luxury-beauty-gift-set-with-gold-accents.jpg",
   },
   {
     year: "2017",

@@ -41,7 +41,7 @@ export default function CEOMessage() {
             <div className="sticky top-20">
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#BBA14F]/20">
                 <Image
-                  src="/luxury-perfume-bottle-gold-lighting.jpg"
+                  src="/luxury-face-cream-jar-gold-black-elegant.jpg"
                   alt="CEO"
                   fill
                   className="object-cover"

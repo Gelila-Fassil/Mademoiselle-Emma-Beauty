@@ -11,7 +11,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="relative w-full h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section className="relative w-full h-screen flex items-center justify-center pt-32 overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#BBA14F] rounded-full blur-3xl opacity-10 animate-pulse"></div>
@@ -40,15 +40,15 @@ export default function HeroSection() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <button className="group relative px-8 py-4 bg-[#BBA14F] text-black font-light text-lg uppercase tracking-widest overflow-hidden rounded-lg hover:bg-[#d4be70] transition">
+            <a href="/collections" className="group relative px-8 py-4 bg-[#BBA14F] text-black font-light text-lg uppercase tracking-widest overflow-hidden rounded-lg hover:bg-[#d4be70] transition inline-flex items-center justify-center gap-2">
               <span className="relative z-10 flex items-center gap-2">
                 Explore Collection
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition" />
               </span>
-            </button>
-            <button className="px-8 py-4 border-2 border-white/30 text-white font-light text-lg uppercase tracking-widest hover:border-[#BBA14F] hover:text-[#BBA14F] transition rounded-lg">
+            </a>
+            <a href="/about" className="px-8 py-4 border-2 border-white/30 text-white font-light text-lg uppercase tracking-widest hover:border-[#BBA14F] hover:text-[#BBA14F] transition rounded-lg inline-flex items-center justify-center">
               Learn More
-            </button>
+            </a>
           </div>
         </div>
 

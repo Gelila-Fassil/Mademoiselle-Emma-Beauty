@@ -12,7 +12,7 @@ export default function AboutHero() {
   }, [])
 
   return (
-    <section className="relative w-full min-h-screen flex items-center pt-20 overflow-hidden bg-black">
+    <section className="relative w-full min-h-screen flex items-center pt-32 overflow-hidden bg-black">
       {/* Split diagonal background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0a0a0a] to-black"></div>

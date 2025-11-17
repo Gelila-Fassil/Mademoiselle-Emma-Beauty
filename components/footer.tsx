@@ -23,22 +23,22 @@ export default function Footer() {
             <h4 className="text-white font-light uppercase tracking-widest text-sm mb-6">Shop</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-white/60 hover:text-[#BBA14F] transition text-sm">
+                <a href="/collections" className="text-white/60 hover:text-[#BBA14F] transition text-sm">
                   All Products
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/60 hover:text-[#BBA14F] transition text-sm">
+                <a href="/collections" className="text-white/60 hover:text-[#BBA14F] transition text-sm">
                   New Arrivals
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/60 hover:text-[#BBA14F] transition text-sm">
+                <a href="/collections" className="text-white/60 hover:text-[#BBA14F] transition text-sm">
                   Collections
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/60 hover:text-[#BBA14F] transition text-sm">
+                <a href="/collections" className="text-white/60 hover:text-[#BBA14F] transition text-sm">
                   Sale
                 </a>
               </li>
@@ -50,22 +50,22 @@ export default function Footer() {
             <h4 className="text-white font-light uppercase tracking-widest text-sm mb-6">Company</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-white/60 hover:text-[#BBA14F] transition text-sm">
+                <a href="/about" className="text-white/60 hover:text-[#BBA14F] transition text-sm">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/60 hover:text-[#BBA14F] transition text-sm">
+                <a href="/about" className="text-white/60 hover:text-[#BBA14F] transition text-sm">
                   Our Story
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/60 hover:text-[#BBA14F] transition text-sm">
+                <a href="/about" className="text-white/60 hover:text-[#BBA14F] transition text-sm">
                   Sustainability
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/60 hover:text-[#BBA14F] transition text-sm">
+                <a href="/contact" className="text-white/60 hover:text-[#BBA14F] transition text-sm">
                   Contact
                 </a>
               </li>

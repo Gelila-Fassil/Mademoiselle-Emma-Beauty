@@ -66,10 +66,23 @@ export default function ProductGallery() {
 
         {/* Product grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {products.map((product, index) => (
-            <div
+          {products.map((product, index) => {
+            // Map category names to match ProductGrid categories
+            const categoryMap: { [key: string]: string } = {
+              "Fragrances": "Fragrances",
+              "Makeup": "Makeup",
+              "Skincare": "Skincare",
+              "Sets": "Gift Sets",
+              "Face": "Makeup",
+            }
+            const mappedCategory = categoryMap[product.category] || product.category
+            const categoryParam = encodeURIComponent(mappedCategory)
+            
+            return (
+            <a
               key={product.id}
-              className={`group relative overflow-hidden rounded-2xl h-96 cursor-pointer transition-all duration-500 transform hover:scale-105 ${
+              href={`/collections?category=${categoryParam}`}
+              className={`group relative overflow-hidden rounded-2xl h-96 cursor-pointer transition-all duration-500 transform hover:scale-105 block ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
@@ -95,8 +108,9 @@ export default function ProductGallery() {
 
               {/* Accent corner */}
               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-[#BBA14F]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-          ))}
+            </a>
+            )
+          })}
         </div>
       </div>
     </section>
