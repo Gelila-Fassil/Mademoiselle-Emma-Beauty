@@ -11,7 +11,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="relative w-full h-screen flex items-center justify-center pt-32 overflow-hidden">
+    <section className="relative w-full h-screen flex items-center justify-center pt-45 overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#BBA14F] rounded-full blur-3xl opacity-10 animate-pulse"></div>

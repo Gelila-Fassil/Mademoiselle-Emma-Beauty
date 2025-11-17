@@ -12,7 +12,7 @@ export default function CollectionHero() {
   }, [])
 
   return (
-    <section className="relative w-full min-h-screen flex items-center pt-42 overflow-hidden bg-black">
+    <section className="relative w-full min-h-screen flex items-center pt-45 overflow-hidden bg-black">
       <div className="max-w-7xl mx-auto w-full h-full">
         {/* Split screen design */}
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
