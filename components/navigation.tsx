@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, X, ShoppingBag } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -39,9 +39,6 @@ export default function Navigation() {
           </a>
           <a href="/contact" className="text-white/70 hover:text-[#BBA14F] transition text-sm uppercase tracking-wide">
             Contact
-          </a>
-          <a href="/collections" className="ml-4 p-2 hover:bg-white/10 rounded-lg transition inline-flex items-center justify-center">
-            <ShoppingBag className="w-5 h-5 text-[#BBA14F]" />
           </a>
         </div>
 

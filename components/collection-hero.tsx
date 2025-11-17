@@ -62,8 +62,8 @@ export default function CollectionHero() {
             </p>
 
             <div className="flex items-center gap-6 pt-4">
-              <a href="/collections" className="group inline-flex items-center gap-3 px-8 py-4 bg-[#BBA14F] text-black font-light text-lg uppercase tracking-widest rounded-lg hover:bg-[#d4be70] transition">
-                Shop Now
+              <a href="/contact" className="group inline-flex items-center gap-3 px-8 py-4 bg-[#BBA14F] text-black font-light text-lg uppercase tracking-widest rounded-lg hover:bg-[#d4be70] transition">
+                Contact Us
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a href="#featured" className="inline-flex items-center gap-3 px-8 py-4 border-2 border-[#BBA14F]/30 text-[#BBA14F] font-light text-lg uppercase tracking-widest rounded-lg hover:border-[#BBA14F] hover:bg-[#BBA14F]/10 transition">
