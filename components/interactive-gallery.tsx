@@ -7,7 +7,7 @@ const products = [
   {
     id: 1,
     name: "Luxury Perfume",
-    image: "/luxury-gold-perfume-bottle-with-crystal-details.jpg",
+    image: "/women-perfums/pic1.jpg",
     category: "Fragrance",
     featured: true,
   },

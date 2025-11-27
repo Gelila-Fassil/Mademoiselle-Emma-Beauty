@@ -9,24 +9,253 @@ const products = [
   {
     id: 1,
     name: "Luxury Perfume",
-    category: "Fragrances",
-    image: "/luxury-gold-perfume-bottle-with-crystal-details.jpg",
-    price: "$299",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic14.jpg",
   },
+
   {
     id: 2,
-    name: "Premium Perfume",
-    category: "Fragrances",
-    image: "/luxury-gold-perfume-bottle-with-crystal-details.jpg",
-    price: "$349",
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic15.jpg",
   },
+
   {
     id: 3,
-    name: "Golden Perfume",
-    category: "Fragrances",
-    image: "/luxury-perfume-bottle-with-golden-details.jpg",
-    price: "$279",
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic16.jpg",
   },
+  {
+    id: 4,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic17.jpg",
+  },
+  {
+    id: 5,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic18.jpg",
+  },
+  {
+    id: 6,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic19.jpg",
+  },
+  {
+    id: 7,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic20.jpg",
+  },
+  {
+    id: 8,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic21.jpg",
+  },
+  {
+    id: 9,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic22.jpg",
+  },
+  {
+    id: 10,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic23.jpg",
+  },
+  {
+    id: 11,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic24.jpg",
+  },
+  {
+    id: 12,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic25.jpg",
+  },
+  {
+    id: 13,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic26.jpg",
+  },
+  {
+    id: 14,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic27.jpg",
+  },
+  {
+    id: 15,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic28.jpg",
+  },
+  {
+    id: 16,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic29.jpg",
+  },
+  {
+    id: 17,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic30.jpg",
+  },
+  {
+    id: 18,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic31.jpg",
+  },
+  {
+    id: 19,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic32.jpg",
+  },
+  {
+    id: 20,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic33.jpg",
+  },
+  {
+    id: 21,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic34.jpg",
+  },
+  {
+    id: 22,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic35.jpg",
+  },
+  {
+    id: 23,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic36.jpg",
+  },
+  {
+    id: 24,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic37.jpg",
+  },
+  {
+    id: 25,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic38.jpg",
+  },
+  {
+    id: 26,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic39.jpg",
+  },
+  {
+    id: 27,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic40.jpg",
+  },
+  {
+    id: 28,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic1.jpg",
+  },
+  {
+    id: 29,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic2.jpg",
+  },
+  {
+    id: 30,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic3.jpg",
+  },
+  
+  {
+    id: 31,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic4.jpg",
+  },
+  {
+    id: 32,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic5.jpg",
+  },
+  {
+    id: 33,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic6.jpg",
+  },
+  {
+    id: 34,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic7.jpg",
+  },
+  {
+    id: 35,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic8.jpg",
+  },
+  {
+    id: 36,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic9.jpg",
+  },
+
+   {
+    id: 37,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic10.jpg",
+  },
+   {
+    id: 38,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic11.jpg",
+  },
+   {
+    id: 39,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic12.jpg",
+  },
+   {
+    id: 40,
+    name: "Luxury Perfume",
+    category: "Women's Perfume",
+    image: "/women-perfums/pic13.jpg",
+  },
+
+  // men's perfume
+
+  
+
+  
   // Makeup
   {
     id: 4,

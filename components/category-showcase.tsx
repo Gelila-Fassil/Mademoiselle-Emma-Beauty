@@ -8,7 +8,7 @@ const categories = [
   {
     name: "Fragrances",
     description: "Luxury perfumes and scents",
-    image: "/luxury-gold-perfume-bottle-with-crystal-details.jpg",
+    image: "/women-perfums/pic11.jpg",
     count: 3,
     color: "from-purple-500/20 to-[#BBA14F]/20",
   },

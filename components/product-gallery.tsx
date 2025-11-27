@@ -7,7 +7,7 @@ const products = [
     id: 1,
     title: "Premium Perfume",
     category: "Fragrances",
-    image: "/luxury-perfume-bottle-with-golden-details.jpg",
+    image: "/women-perfums/pic24.jpg",
   },
   {
     id: 2,

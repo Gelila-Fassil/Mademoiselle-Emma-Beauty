@@ -8,7 +8,7 @@ const allProducts = [
     id: 1,
     title: "Premium Perfume",
     category: "Fragrances",
-    image: "/luxury-perfume-bottle-with-golden-details.jpg",
+    image: "/women-perfums/pic23.jpg",
     description: "Timeless elegance in every spray",
   },
   {
