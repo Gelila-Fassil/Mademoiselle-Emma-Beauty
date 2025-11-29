@@ -9,11 +9,21 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-[#BBA14F] rounded-full flex items-center justify-center">
-                <span className="text-black font-bold text-lg">ME</span>
-              </div>
-              <span className="text-white font-light text-xl tracking-widest">MADEMOISELLE</span>
+            <div className="flex items-center gap-3 mb-6">
+              <img
+                src="/newbg.png"
+                alt="Mademoiselle Logo"
+                className="object-contain flex-shrink-0"
+                style={{ 
+                  width: '200px', 
+                  height: 'auto',
+                  maxHeight: '80px',
+                }}
+                onError={(e) => {
+                  // Fallback to JPG if PNG doesn't exist
+                  e.currentTarget.src = '/cosmologo.jpg';
+                }}
+              />
             </div>
             <p className="text-white/60 text-sm">Elevating beauty standards with premium, luxury cosmetics.</p>
           </div>
