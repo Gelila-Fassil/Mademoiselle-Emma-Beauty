@@ -72,7 +72,7 @@ export default function InteractiveGallery() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#BBA14F]/20 via-transparent to-transparent"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto z-10 overflow-visible">
+      <div className="relative w-[85%] mx-auto z-10 overflow-visible">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-sans">

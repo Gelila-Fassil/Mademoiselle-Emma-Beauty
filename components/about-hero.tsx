@@ -19,7 +19,7 @@ export default function AboutHero() {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#BBA14F]/5 to-transparent"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+      <div className="relative z-10 w-[85%] mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-12 gap-12 items-center min-h-[80vh]">
           {/* Left - Large text block (7 columns) */}
           <div className="lg:col-span-7 space-y-8">
@@ -62,7 +62,7 @@ export default function AboutHero() {
               </div>
               
               {/* Bottom image - offset right */}
-              <div className={`relative h-[45%] rounded-2xl overflow-hidden border border-[#BBA14F]/20 ml-auto w-[90%] transition-all duration-1000 delay-700 ${
+              <div className={`relative h-[45%] rounded-2xl overflow-hidden border border-[#BBA14F]/20 ml-auto w-[85%] transition-all duration-1000 delay-700 ${
                 isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
               }`}>
                 <Image

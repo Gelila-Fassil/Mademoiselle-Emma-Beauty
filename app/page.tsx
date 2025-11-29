@@ -24,7 +24,6 @@ export default function Home() {
           <Navigation />
           <HeroSection />
           <ProductGallery />
-          <AnimatedGallery />
           <InteractiveGallery />
           <ProductShowcase />
           <TrustSection />

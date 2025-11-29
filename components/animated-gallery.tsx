@@ -120,7 +120,7 @@ export default function AnimatedGallery() {
 
   return (
     <section className="relative py-32 px-6 overflow-hidden bg-gradient-to-b from-black via-[#0a0a0a] to-black">
-      <div className="max-w-7xl mx-auto">
+      <div className="w-[85%] mx-auto">
         {/* Section header */}
         <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}>
           <div className="inline-block px-4 py-2 bg-[#BBA14F]/10 border border-[#BBA14F]/30 rounded-full mb-6">

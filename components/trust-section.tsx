@@ -17,7 +17,7 @@ export default function TrustSection() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#BBA14F] rounded-full blur-3xl opacity-10"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="w-[85%] mx-auto relative z-10">
         {/* Stats grid */}
         <div
           className={`grid md:grid-cols-3 gap-8 mb-20 transition-all duration-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}

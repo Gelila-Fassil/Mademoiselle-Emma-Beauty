@@ -32,7 +32,7 @@ export default function CEOMessage() {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#BBA14F]/5 to-transparent"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto z-10">
+      <div className="relative w-[85%] mx-auto z-10">
         <div className="grid md:grid-cols-12 gap-12 items-start">
           {/* Image - Left side, spans 4 columns */}
           <div className={`md:col-span-4 transition-all duration-1000 ${

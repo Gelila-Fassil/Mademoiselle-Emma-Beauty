@@ -12,7 +12,7 @@ export default function ProductShowcase() {
 
   return (
     <section className="relative py-24 px-6 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      <div className="w-[85%] mx-auto">
         {/* Featured product showcase */}
         <div
           className={`grid md:grid-cols-2 gap-12 items-center mb-24 transition-all duration-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}

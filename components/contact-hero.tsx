@@ -24,7 +24,7 @@ export default function ContactHero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/90"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 w-[85%] mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left - Content */}
           <div

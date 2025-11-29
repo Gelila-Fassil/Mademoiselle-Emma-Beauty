@@ -46,7 +46,7 @@ export default function ContactForm() {
 
   return (
     <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      <div className="w-[85%] mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left - Form */}
           <div

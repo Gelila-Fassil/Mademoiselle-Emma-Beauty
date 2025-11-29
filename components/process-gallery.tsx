@@ -49,7 +49,7 @@ export default function ProcessGallery() {
 
   return (
     <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden bg-black">
-      <div className="max-w-7xl mx-auto">
+      <div className="w-[85%] mx-auto">
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-[#BBA14F]/10 border border-[#BBA14F]/30 rounded-full mb-6">
             <span className="text-[#BBA14F] text-sm uppercase tracking-widest font-light">Behind The Scenes</span>

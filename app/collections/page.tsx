@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, Suspense } from "react"
+import { Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
@@ -11,27 +11,18 @@ import FeaturedCollection from "@/components/featured-collection"
 import ProductGrid from "@/components/product-grid"
 
 function CollectionsContent() {
-  const [isLoaded, setIsLoaded] = useState(false)
   const searchParams = useSearchParams()
   const categoryParam = searchParams.get("category")
 
-  useEffect(() => {
-    setIsLoaded(true)
-  }, [])
-
   return (
     <>
-      {isLoaded && (
-        <>
-          <Navigation />
-          <CollectionHero />
-          <FuturisticStats />
-          <CategoryShowcase />
-          <FeaturedCollection />
-          <ProductGrid initialCategory={categoryParam || null} />
-          <Footer />
-        </>
-      )}
+      <Navigation />
+      <CollectionHero />
+      <FuturisticStats />
+      <CategoryShowcase />
+      <FeaturedCollection />
+      <ProductGrid initialCategory={categoryParam || null} />
+      <Footer />
     </>
   )
 }

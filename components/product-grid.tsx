@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef, useMemo } from "react"
 import Image from "next/image"
 import { ShoppingBag, Heart } from "lucide-react"
 
@@ -156,7 +156,7 @@ const products = [
     id: 25,
     name: "Luxury Perfume",
     category: "Women's Perfume",
-    image: "/women-perfums/pic38.jpg",
+    image: "/women-perfums/pic37.jpg",
   },
   {
     id: 26,
@@ -251,49 +251,179 @@ const products = [
     image: "/women-perfums/pic13.jpg",
   },
 
-  // men's perfume
-
-  
-
+  // Men's Perfume
+  {
+    id: 54,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic1.jpg",
+    price: "$199",
+  },
+  {
+    id: 55,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic2.jpg",
+    price: "$199",
+  },
+  {
+    id: 56,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic3.jpg",
+    price: "$199",
+  },
+  {
+    id: 57,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic4.jpg",
+    price: "$199",
+  },
+  {
+    id: 58,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic5.jpg",
+    price: "$199",
+  },
+  {
+    id: 59,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic6.jpg",
+    price: "$199",
+  },
+  {
+    id: 60,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic7.jpg",
+    price: "$199",
+  },
+  {
+    id: 61,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic8.jpg",
+    price: "$199",
+  },
+  {
+    id: 62,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic9.jpg",
+    price: "$199",
+  },
+  {
+    id: 63,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic10.jpg",
+    price: "$199",
+  },
+  {
+    id: 64,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic11.jpg",
+    price: "$199",
+  },
+  {
+    id: 65,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic12.jpg",
+    price: "$199",
+  },
+  {
+    id: 66,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic13.jpg",
+    price: "$199",
+  },
+  {
+    id: 67,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic14.jpg",
+    price: "$199",
+  },
+  {
+    id: 68,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic15.jpg",
+    price: "$199",
+  },
+  {
+    id: 69,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic16.jpg",
+    price: "$199",
+  },
+  {
+    id: 70,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic17.jpg",
+    price: "$199",
+  },
+  {
+    id: 71,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic18.jpg",
+    price: "$199",
+  },
+  {
+    id: 72,
+    name: "Men's Luxury Perfume",
+    category: "Men's Perfume",
+    image: "/men-perfumes/pic19.jpg",
+    price: "$199",
+  },
   
   // Makeup
   {
-    id: 4,
+    id: 41,
     name: "Premium Makeup Kit",
     category: "Makeup",
     image: "/high-end-makeup-palette-and-brushes-gold-black.jpg",
     price: "$189",
   },
   {
-    id: 5,
+    id: 42,
     name: "Lipstick Collection",
     category: "Makeup",
     image: "/luxury-lipstick-collection-red-pink-nude-colors.jpg",
     price: "$129",
   },
   {
-    id: 6,
+    id: 43,
     name: "Eye Shadow Palette",
     category: "Makeup",
     image: "/luxury-eyeshadow-palette-shimmer-gold-bronze.jpg",
     price: "$149",
   },
   {
-    id: 7,
+    id: 44,
     name: "Mascara",
     category: "Makeup",
     image: "/luxury-mascara-with-gold-packaging.jpg",
     price: "$49",
   },
   {
-    id: 8,
+    id: 45,
     name: "Foundation",
     category: "Makeup",
     image: "/premium-liquid-foundation-bottle-luxury-packaging.jpg",
     price: "$89",
   },
   {
-    id: 9,
+    id: 46,
     name: "Face Products",
     category: "Makeup",
     image: "/makeup-face-products-palette-compacts.jpg",
@@ -301,35 +431,35 @@ const products = [
   },
   // Skincare
   {
-    id: 10,
+    id: 47,
     name: "Skincare Serum",
     category: "Skincare",
     image: "/luxury-skincare-serum-bottle-elegant-black-gold.jpg",
     price: "$199",
   },
   {
-    id: 11,
+    id: 48,
     name: "Essence Serum",
     category: "Skincare",
     image: "/luxury-essence-serum-bottle-transparent.jpg",
     price: "$179",
   },
   {
-    id: 12,
+    id: 49,
     name: "Face Cream",
     category: "Skincare",
     image: "/luxury-face-cream-jar-gold-black-elegant.jpg",
     price: "$219",
   },
   {
-    id: 13,
+    id: 50,
     name: "Body Oil",
     category: "Skincare",
     image: "/premium-body-oil-luxurious-packaging.jpg",
     price: "$139",
   },
   {
-    id: 14,
+    id: 51,
     name: "Premium Skincare",
     category: "Skincare",
     image: "/premium-skincare-bottles-and-creams.jpg",
@@ -337,14 +467,14 @@ const products = [
   },
   // Gift Sets
   {
-    id: 15,
+    id: 52,
     name: "Luxury Gift Set",
     category: "Gift Sets",
     image: "/luxury-beauty-gift-set-with-gold-accents.jpg",
     price: "$399",
   },
   {
-    id: 16,
+    id: 53,
     name: "Cosmetics Collection",
     category: "Gift Sets",
     image: "/luxury-cosmetics-makeup-collection-display-elegant.jpg",
@@ -357,12 +487,15 @@ interface ProductGridProps {
 }
 
 export default function ProductGrid({ initialCategory = null }: ProductGridProps) {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
   const [selectedCategory, setSelectedCategory] = useState<string | null>(initialCategory)
   const [hoveredId, setHoveredId] = useState<number | null>(null)
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    // Set visible immediately, then use observer for animations
+    setIsVisible(true)
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -376,7 +509,15 @@ export default function ProductGrid({ initialCategory = null }: ProductGridProps
       observer.observe(sectionRef.current)
     }
 
-    return () => observer.disconnect()
+    // Fallback: ensure visibility after a short delay
+    const timeout = setTimeout(() => {
+      setIsVisible(true)
+    }, 100)
+
+    return () => {
+      observer.disconnect()
+      clearTimeout(timeout)
+    }
   }, [])
 
   // Update selected category when initialCategory changes
@@ -390,14 +531,30 @@ export default function ProductGrid({ initialCategory = null }: ProductGridProps
     }
   }, [initialCategory])
 
+  // Shuffle function to randomize array (Fisher-Yates algorithm)
+  const shuffleArray = <T,>(array: T[]): T[] => {
+    const shuffled = [...array]
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+    }
+    return shuffled
+  }
+
   const categories = Array.from(new Set(products.map((p) => p.category)))
-  const filteredProducts = selectedCategory
-    ? products.filter((p) => p.category === selectedCategory)
-    : products
+  
+  // Filter and shuffle products based on selected category
+  // Shuffle happens every time the category changes for true randomness
+  const filteredProducts = useMemo(() => {
+    const filtered = selectedCategory
+      ? products.filter((p) => p.category === selectedCategory)
+      : products
+    return shuffleArray(filtered)
+  }, [selectedCategory])
 
   return (
     <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      <div className="w-[85%] mx-auto">
         {/* Category filter */}
         <div className="mb-16">
           <div className="flex flex-wrap gap-4 justify-center">
@@ -440,11 +597,12 @@ export default function ProductGrid({ initialCategory = null }: ProductGridProps
               } ${hoveredId === product.id ? "scale-105 z-10" : "scale-100"}`}
               style={{ transitionDelay: `${index * 50}ms` }}
             >
-              <div className="relative aspect-[3/4] overflow-hidden">
+              <div className="relative aspect-[3/4] overflow-hidden bg-black/20">
                 <Image
-                  src={product.image}
+                  src={product.image || "/placeholder.jpg"}
                   alt={product.name}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className={`object-cover transition-transform duration-700 ${
                     hoveredId === product.id ? "scale-110" : "scale-100"
                   }`}
@@ -468,11 +626,17 @@ export default function ProductGrid({ initialCategory = null }: ProductGridProps
                   <h3 className="text-xl font-light text-white mb-2 group-hover:text-[#BBA14F] transition-colors">
                     {product.name}
                   </h3>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-light text-[#BBA14F]">{product.price}</span>
-                    <a href="/collections" className="p-2 bg-[#BBA14F] text-black rounded-full hover:bg-[#d4be70] transition-all opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 inline-flex items-center justify-center">
+                  <div className="flex items-center justify-end">
+                    <button 
+                      onClick={(e) => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                        window.location.href = "/collections"
+                      }}
+                      className="p-2 bg-[#BBA14F] text-black rounded-full hover:bg-[#d4be70] transition-all opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 inline-flex items-center justify-center"
+                    >
                       <ShoppingBag className="w-5 h-5" />
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>

@@ -58,7 +58,7 @@ export default function ContactInfo() {
 
   return (
     <section ref={sectionRef} className="relative py-20 px-6 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      <div className="w-[85%] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {contactMethods.map((method, index) => {
             const Icon = method.icon

@@ -59,7 +59,7 @@ export default function CategoryShowcase() {
 
   return (
     <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      <div className="w-[85%] mx-auto">
         <div className="text-center mb-20">
           <div className="inline-block px-4 py-2 bg-[#BBA14F]/10 border border-[#BBA14F]/30 rounded-full mb-6">
             <span className="text-[#BBA14F] text-sm uppercase tracking-widest font-light">Shop By Category</span>
@@ -107,10 +107,10 @@ export default function CategoryShowcase() {
                     </h3>
                     <p className="text-white/80 text-sm">{category.description}</p>
                   </div>
-                  <a href="/collections" className="group/btn inline-flex items-center gap-2 text-[#BBA14F] hover:text-[#d4be70] transition">
+                  <div className="group/btn inline-flex items-center gap-2 text-[#BBA14F] hover:text-[#d4be70] transition">
                     <span className="uppercase tracking-widest text-xs">Explore</span>
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </a>
+                  </div>
                 </div>
               </div>
             </a>

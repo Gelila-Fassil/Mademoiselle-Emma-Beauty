@@ -27,7 +27,7 @@ export default function MissionVision() {
 
   return (
     <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden bg-black">
-      <div className="max-w-7xl mx-auto">
+      <div className="w-[85%] mx-auto">
         {/* Mission - Full width with side image */}
         <div className={`mb-24 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"

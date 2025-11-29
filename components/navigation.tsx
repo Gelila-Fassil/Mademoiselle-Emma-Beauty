@@ -7,17 +7,17 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-lg border-b border-white/5 pt-2">
-      <div className="max-w-7xl mx-auto px-6 py-1 flex items-center justify-between">
+    <nav className="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-lg border-b border-white/5">
+      <div className="w-[85%] mx-auto px-6 py-2 flex items-center justify-between">
         <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <img
             src="/newbg.png"
             alt="Mademoiselle Logo"
             className="object-contain flex-shrink-0"
             style={{ 
-              width: '200px', 
+              width: '150px', 
               height: 'auto',
-              maxHeight: '100px',
+              maxHeight: '60px',
             }}
             onError={(e) => {
               // Fallback to JPG if PNG doesn't exist

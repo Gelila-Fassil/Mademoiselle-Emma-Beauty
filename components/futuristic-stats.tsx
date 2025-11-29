@@ -75,7 +75,7 @@ export default function FuturisticStats() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto z-10">
+      <div className="relative w-[85%] mx-auto z-10">
         <div className="text-center mb-20">
           <div className="inline-block px-4 py-2 bg-[#BBA14F]/10 border border-[#BBA14F]/30 rounded-full mb-6">
             <span className="text-[#BBA14F] text-sm uppercase tracking-widest font-light">Our Impact</span>
