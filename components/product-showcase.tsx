@@ -20,7 +20,7 @@ export default function ProductShowcase() {
           <div className="relative group">
             <div className="absolute inset-0 bg-gradient-to-r from-[#BBA14F]/20 to-transparent rounded-3xl blur-2xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
             <img
-              src="/luxury-cosmetics-makeup-collection-display-elegant.jpg"
+              src="/lipstick/pic12.jpg"
               alt="Signature Line"
               className="relative w-full h-96 md:h-full object-cover rounded-3xl"
             />
