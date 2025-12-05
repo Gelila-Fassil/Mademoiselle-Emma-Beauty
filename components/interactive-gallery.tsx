@@ -1,69 +1,55 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
-const products = [
-  {
-    id: 1,
-    name: "Luxury Perfume",
-    image: "/women-perfums/pic1.jpg",
-    category: "Fragrance",
-    featured: true,
-  },
-  {
-    id: 2,
-    name: "Premium Makeup Kit",
-    image: "/high-end-makeup-palette-and-brushes-gold-black.jpg",
-    category: "Makeup",
-  },
-  {
-    id: 3,
-    name: "Skincare Serum",
-    image: "/luxury-skincare-serum-bottle-elegant-black-gold.jpg",
-    category: "Skincare",
-  },
-  {
-    id: 4,
-    name: "Lipstick Collection",
-    image: "/luxury-lipstick-collection-red-pink-nude-colors.jpg",
-    category: "Makeup",
-  },
-  {
-    id: 5,
-    name: "Eye Shadow",
-    image: "/luxury-eyeshadow-palette-shimmer-gold-bronze.jpg",
-    category: "Makeup",
-  },
-  {
-    id: 6,
-    name: "Face Cream",
-    image: "/luxury-face-cream-jar-gold-black-elegant.jpg",
-    category: "Skincare",
-  },
-  {
-    id: 7,
-    name: "Foundation",
-    image: "/premium-liquid-foundation-bottle-luxury-packaging.jpg",
-    category: "Makeup",
-    featured: true,
-  },
-  {
-    id: 8,
-    name: "Mascara Wand",
-    image: "/luxury-mascara-with-gold-packaging.jpg",
-    category: "Makeup",
-  },
-  {
-    id: 9,
-    name: "Body Oil",
-    image: "/premium-body-oil-luxurious-packaging.jpg",
-    category: "Skincare",
-  },
-]
+// Build gallery images from the four folders requested:
+// lipstick, men-perfumes, women-perfums, skincare
+const lipstickFiles = Array.from({ length: 29 }, (_, i) => `pic${i + 1}.jpg`);
+const menFiles = Array.from({ length: 19 }, (_, i) => `pic${i + 1}.jpg`);
+// women's folder includes 40 files but one (pic38) is missing in the repository, so include the ones we know exist
+const womenFiles = [
+  ...Array.from({ length: 37 }, (_, i) => `pic${i + 1}.jpg`),
+  "pic39.jpg",
+  "pic40.jpg",
+];
+const skincareFiles = Array.from({ length: 42 }, (_, i) => `pic${i + 1}.jpg`);
+
+const buildItems = () => {
+  const items: { id: number; name: string; image: string; category: string }[] =
+    [];
+  let id = 1;
+
+  const add = (folder: string, files: string[], category: string) => {
+    for (const name of files) {
+      items.push({
+        id: id++,
+        name: `${category} ${name.replace(".jpg", "")}`,
+        image: `/${folder}/${name}`,
+        category,
+      });
+    }
+  };
+
+  add("lipstick", lipstickFiles, "Lipstick");
+  add("men-perfumes", menFiles, "Men's Perfume");
+  add("women-perfums", womenFiles, "Women's Perfume");
+  add("skincare", skincareFiles, "Skincare");
+
+  // Shuffle items so the gallery feels mixed
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+
+  // Limit gallery to 20 images total (mixed from the four folders)
+  return items.slice(0, 20)
+};
+
+const products = buildItems();
 
 export default function InteractiveGallery() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null)
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-visible">
@@ -76,50 +62,57 @@ export default function InteractiveGallery() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-sans">
-            Explore Our <span className="text-[#BBA14F]">Exquisite</span> Collection
+            Explore Our <span className="text-[#BBA14F]">Exquisite</span>{" "}
+            Collection
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Discover our complete range of luxury beauty products, each crafted with precision and elegance
+            Discover our complete range of luxury beauty products, each crafted
+            with precision and elegance
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4 py-8 md:py-12 overflow-visible" style={{ gridAutoRows: 'minmax(300px, auto)' }}>
+        <div
+          className="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4 py-8 md:py-12 overflow-visible"
+          style={{ gridAutoRows: "minmax(300px, auto)" }}
+        >
           {products.map((product, index) => {
-            const isFeatured = product.featured
-            const isHovered = hoveredId === product.id
-            
+            // Keep the featured flag for visual treatment but DON'T change layout spans
+            const isFeatured = !!(product as any).featured;
+            const isHovered = hoveredId === product.id;
+
             // Create staggered effect: alternate up and down based on column position
             // Columns 0,2 go up; Columns 1,3 go down
             // Reduced offset to prevent clipping
-            const columnIndex = index % 4
-            const staggerOffset = isFeatured 
-              ? 0 
-              : (columnIndex === 0 || columnIndex === 2 ? '-30px' : '30px')
+            const columnIndex = index % 4;
+            const staggerOffset = isFeatured
+              ? 0
+              : columnIndex === 0 || columnIndex === 2
+              ? "-30px"
+              : "30px";
 
             return (
               <a
                 key={product.id}
                 href="/collections"
-                className={`relative group cursor-pointer transition-all duration-700 ease-out block
-                  ${isFeatured ? "md:col-span-2" : ""}
-                  ${isHovered ? "z-50" : "z-10"}
-                `}
+                className={`relative group cursor-pointer transition-all duration-700 ease-out block ${
+                  isHovered ? "z-50" : "z-10"
+                }`}
                 onMouseEnter={() => setHoveredId(product.id)}
                 onMouseLeave={() => setHoveredId(null)}
                 style={{
-                  transform: isHovered 
-                    ? `scale(1.02) translateY(${staggerOffset})` 
+                  transform: isHovered
+                    ? `scale(1.02) translateY(${staggerOffset})`
                     : `translateY(${staggerOffset})`,
-                  transition: "transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                  transition:
+                    "transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
                 }}
               >
                 <div
-                  className="relative w-full overflow-hidden rounded-xl bg-black/40 backdrop-blur-sm
-                    border border-[#BBA14F]/10 hover:border-[#BBA14F]/50 transition-all duration-500
-                    shadow-lg hover:shadow-2xl hover:shadow-[#BBA14F]/20"
+                  className="relative w-full overflow-hidden rounded-xl bg-black/40 backdrop-blur-sm border border-[#BBA14F]/10 hover:border-[#BBA14F]/50 transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#BBA14F]/20"
                   style={{
-                    aspectRatio: isFeatured ? "16/10" : "3/4",
-                    minHeight: isFeatured ? "400px" : "300px",
+                    // Use a consistent aspect ratio so tiles are uniform and fill the grid
+                    aspectRatio: "3/4",
+                    minHeight: "280px",
                   }}
                 >
                   {/* Image - using object-cover with object-position center to show full images */}
@@ -129,7 +122,11 @@ export default function InteractiveGallery() {
                     fill
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     priority={isFeatured}
-                    sizes={isFeatured ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, 25vw"}
+                    sizes={
+                      isFeatured
+                        ? "(max-width: 768px) 100vw, 50vw"
+                        : "(max-width: 768px) 100vw, 25vw"
+                    }
                   />
 
                   {/* Gradient Overlay */}
@@ -197,7 +194,7 @@ export default function InteractiveGallery() {
                   )}
                 </div>
               </a>
-            )
+            );
           })}
         </div>
 
@@ -214,5 +211,5 @@ export default function InteractiveGallery() {
         </div>
       </div>
     </section>
-  )
+  );
 }

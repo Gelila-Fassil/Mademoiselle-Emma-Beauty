@@ -61,7 +61,7 @@ export default function ProductGallery() {
     
     // Distribute products more evenly across rows
     const rowSize = Math.ceil(shuffled.length / 4)
-    const rows = [[], [], [], []]
+    const rows: (typeof allProducts[number])[][] = [[], [], [], []]
     
     // Distribute products in a round-robin fashion for better mixing
     shuffled.forEach((product, index) => {

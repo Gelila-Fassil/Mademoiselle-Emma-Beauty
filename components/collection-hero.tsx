@@ -31,7 +31,7 @@ export default function CollectionHero() {
               </div>
               <div className="relative rounded-2xl overflow-hidden border-2 border-[#BBA14F]/20">
                 <Image
-                  src="/luxury-makeup-cosmetics-collection.jpg"
+                  src="/lipstick/pic11.jpg"
                   alt="Collection 2"
                   fill
                   className="object-cover"

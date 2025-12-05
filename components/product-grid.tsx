@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useEffect, useState, useRef, useMemo } from "react"
-import Image from "next/image"
-import { ShoppingBag, Heart } from "lucide-react"
+import { useEffect, useState, useRef, useMemo } from "react";
+import Image from "next/image";
+import { ShoppingBag, Heart } from "lucide-react";
 
 const products = [
   // Fragrances
@@ -188,7 +188,7 @@ const products = [
     category: "Women's Perfume",
     image: "/women-perfums/pic3.jpg",
   },
-  
+
   {
     id: 31,
     name: "Luxury Perfume",
@@ -226,25 +226,25 @@ const products = [
     image: "/women-perfums/pic9.jpg",
   },
 
-   {
+  {
     id: 37,
     name: "Luxury Perfume",
     category: "Women's Perfume",
     image: "/women-perfums/pic10.jpg",
   },
-   {
+  {
     id: 38,
     name: "Luxury Perfume",
     category: "Women's Perfume",
     image: "/women-perfums/pic11.jpg",
   },
-   {
+  {
     id: 39,
     name: "Luxury Perfume",
     category: "Women's Perfume",
     image: "/women-perfums/pic12.jpg",
   },
-   {
+  {
     id: 40,
     name: "Luxury Perfume",
     category: "Women's Perfume",
@@ -366,7 +366,7 @@ const products = [
     category: "Men's Perfume",
     image: "/men-perfumes/pic19.jpg",
   },
-  
+
   // Makeup
   {
     id: 41,
@@ -616,6 +616,259 @@ const products = [
     category: "Skincare",
     image: "/premium-skincare-bottles-and-creams.jpg",
   },
+  // Additional Skincare images (from public/skincare pic1..pic42)
+  {
+    id: 200,
+    name: "Skincare Product 1",
+    category: "Skincare",
+    image: "/skincare/pic1.jpg",
+  },
+  {
+    id: 201,
+    name: "Skincare Product 2",
+    category: "Skincare",
+    image: "/skincare/pic2.jpg",
+  },
+  {
+    id: 202,
+    name: "Skincare Product 3",
+    category: "Skincare",
+    image: "/skincare/pic3.jpg",
+  },
+  {
+    id: 203,
+    name: "Skincare Product 4",
+    category: "Skincare",
+    image: "/skincare/pic4.jpg",
+  },
+  {
+    id: 204,
+    name: "Skincare Product 5",
+    category: "Skincare",
+    image: "/skincare/pic5.jpg",
+  },
+  {
+    id: 205,
+    name: "Skincare Product 6",
+    category: "Skincare",
+    image: "/skincare/pic6.jpg",
+  },
+  {
+    id: 206,
+    name: "Skincare Product 7",
+    category: "Skincare",
+    image: "/skincare/pic7.jpg",
+  },
+  {
+    id: 207,
+    name: "Skincare Product 8",
+    category: "Skincare",
+    image: "/skincare/pic8.jpg",
+  },
+  {
+    id: 208,
+    name: "Skincare Product 9",
+    category: "Skincare",
+    image: "/skincare/pic9.jpg",
+  },
+  {
+    id: 209,
+    name: "Skincare Product 10",
+    category: "Skincare",
+    image: "/skincare/pic10.jpg",
+  },
+  {
+    id: 210,
+    name: "Skincare Product 11",
+    category: "Skincare",
+    image: "/skincare/pic11.jpg",
+  },
+  {
+    id: 211,
+    name: "Skincare Product 12",
+    category: "Skincare",
+    image: "/skincare/pic12.jpg",
+  },
+  {
+    id: 212,
+    name: "Skincare Product 13",
+    category: "Skincare",
+    image: "/skincare/pic13.jpg",
+  },
+  {
+    id: 213,
+    name: "Skincare Product 14",
+    category: "Skincare",
+    image: "/skincare/pic14.jpg",
+  },
+  {
+    id: 214,
+    name: "Skincare Product 15",
+    category: "Skincare",
+    image: "/skincare/pic15.jpg",
+  },
+  {
+    id: 215,
+    name: "Skincare Product 16",
+    category: "Skincare",
+    image: "/skincare/pic16.jpg",
+  },
+  {
+    id: 216,
+    name: "Skincare Product 17",
+    category: "Skincare",
+    image: "/skincare/pic17.jpg",
+  },
+  {
+    id: 217,
+    name: "Skincare Product 18",
+    category: "Skincare",
+    image: "/skincare/pic18.jpg",
+  },
+  {
+    id: 218,
+    name: "Skincare Product 19",
+    category: "Skincare",
+    image: "/skincare/pic19.jpg",
+  },
+  {
+    id: 219,
+    name: "Skincare Product 20",
+    category: "Skincare",
+    image: "/skincare/pic20.jpg",
+  },
+  {
+    id: 220,
+    name: "Skincare Product 21",
+    category: "Skincare",
+    image: "/skincare/pic21.jpg",
+  },
+  {
+    id: 221,
+    name: "Skincare Product 22",
+    category: "Skincare",
+    image: "/skincare/pic22.jpg",
+  },
+  {
+    id: 222,
+    name: "Skincare Product 23",
+    category: "Skincare",
+    image: "/skincare/pic23.jpg",
+  },
+  {
+    id: 223,
+    name: "Skincare Product 24",
+    category: "Skincare",
+    image: "/skincare/pic24.jpg",
+  },
+  {
+    id: 224,
+    name: "Skincare Product 25",
+    category: "Skincare",
+    image: "/skincare/pic25.jpg",
+  },
+  {
+    id: 225,
+    name: "Skincare Product 26",
+    category: "Skincare",
+    image: "/skincare/pic26.jpg",
+  },
+  {
+    id: 226,
+    name: "Skincare Product 27",
+    category: "Skincare",
+    image: "/skincare/pic27.jpg",
+  },
+  {
+    id: 227,
+    name: "Skincare Product 28",
+    category: "Skincare",
+    image: "/skincare/pic28.jpg",
+  },
+  {
+    id: 228,
+    name: "Skincare Product 29",
+    category: "Skincare",
+    image: "/skincare/pic29.jpg",
+  },
+  {
+    id: 229,
+    name: "Skincare Product 30",
+    category: "Skincare",
+    image: "/skincare/pic30.jpg",
+  },
+  {
+    id: 230,
+    name: "Skincare Product 31",
+    category: "Skincare",
+    image: "/skincare/pic31.jpg",
+  },
+  {
+    id: 231,
+    name: "Skincare Product 32",
+    category: "Skincare",
+    image: "/skincare/pic32.jpg",
+  },
+  {
+    id: 232,
+    name: "Skincare Product 33",
+    category: "Skincare",
+    image: "/skincare/pic33.jpg",
+  },
+  {
+    id: 233,
+    name: "Skincare Product 34",
+    category: "Skincare",
+    image: "/skincare/pic34.jpg",
+  },
+  {
+    id: 234,
+    name: "Skincare Product 35",
+    category: "Skincare",
+    image: "/skincare/pic35.jpg",
+  },
+  {
+    id: 235,
+    name: "Skincare Product 36",
+    category: "Skincare",
+    image: "/skincare/pic36.jpg",
+  },
+  {
+    id: 236,
+    name: "Skincare Product 37",
+    category: "Skincare",
+    image: "/skincare/pic37.jpg",
+  },
+  {
+    id: 237,
+    name: "Skincare Product 38",
+    category: "Skincare",
+    image: "/skincare/pic38.jpg",
+  },
+  {
+    id: 238,
+    name: "Skincare Product 39",
+    category: "Skincare",
+    image: "/skincare/pic39.jpg",
+  },
+  {
+    id: 239,
+    name: "Skincare Product 40",
+    category: "Skincare",
+    image: "/skincare/pic40.jpg",
+  },
+  {
+    id: 240,
+    name: "Skincare Product 41",
+    category: "Skincare",
+    image: "/skincare/pic41.jpg",
+  },
+  {
+    id: 241,
+    name: "Skincare Product 42",
+    category: "Skincare",
+    image: "/skincare/pic42.jpg",
+  },
   // Gift Sets
   {
     id: 52,
@@ -629,77 +882,84 @@ const products = [
     category: "Gift Sets",
     image: "/luxury-cosmetics-makeup-collection-display-elegant.jpg",
   },
-]
+];
 
 interface ProductGridProps {
-  initialCategory?: string | null
+  initialCategory?: string | null;
 }
 
-export default function ProductGrid({ initialCategory = null }: ProductGridProps) {
-  const [isVisible, setIsVisible] = useState(true)
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(initialCategory)
-  const [hoveredId, setHoveredId] = useState<number | null>(null)
-  const sectionRef = useRef<HTMLDivElement>(null)
+export default function ProductGrid({
+  initialCategory = null,
+}: ProductGridProps) {
+  const [isVisible, setIsVisible] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(
+    initialCategory
+  );
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Set visible immediately, then use observer for animations
-    setIsVisible(true)
-    
+    setIsVisible(true);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
       { threshold: 0.1 }
-    )
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
     // Fallback: ensure visibility after a short delay
     const timeout = setTimeout(() => {
-      setIsVisible(true)
-    }, 100)
+      setIsVisible(true);
+    }, 100);
 
     return () => {
-      observer.disconnect()
-      clearTimeout(timeout)
-    }
-  }, [])
+      observer.disconnect();
+      clearTimeout(timeout);
+    };
+  }, []);
 
   // Update selected category when initialCategory changes
   useEffect(() => {
     if (initialCategory) {
-      setSelectedCategory(initialCategory)
+      setSelectedCategory(initialCategory);
       // Scroll to product grid when category is set from URL
       setTimeout(() => {
-        sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }, 100)
+        sectionRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
     }
-  }, [initialCategory])
+  }, [initialCategory]);
 
   // Shuffle function to randomize array (Fisher-Yates algorithm)
   const shuffleArray = <T,>(array: T[]): T[] => {
-    const shuffled = [...array]
+    const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-    return shuffled
-  }
+    return shuffled;
+  };
 
-  const categories = Array.from(new Set(products.map((p) => p.category)))
-  
+  const categories = Array.from(new Set(products.map((p) => p.category)));
+
   // Filter and shuffle products based on selected category
   // Shuffle happens every time the category changes for true randomness
   const filteredProducts = useMemo(() => {
     const filtered = selectedCategory
       ? products.filter((p) => p.category === selectedCategory)
-      : products
-    return shuffleArray(filtered)
-  }, [selectedCategory])
+      : products;
+    return shuffleArray(filtered);
+  }, [selectedCategory]);
 
   return (
     <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
@@ -742,7 +1002,9 @@ export default function ProductGrid({ initialCategory = null }: ProductGridProps
               onMouseEnter={() => setHoveredId(product.id)}
               onMouseLeave={() => setHoveredId(null)}
               className={`group relative overflow-hidden rounded-2xl border border-[#BBA14F]/20 hover:border-[#BBA14F]/50 transition-all duration-500 cursor-pointer block ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
               } ${hoveredId === product.id ? "scale-105 z-10" : "scale-100"}`}
               style={{ transitionDelay: `${index * 50}ms` }}
             >
@@ -776,11 +1038,11 @@ export default function ProductGrid({ initialCategory = null }: ProductGridProps
                     {product.name}
                   </h3>
                   <div className="flex items-center justify-end">
-                    <button 
+                    <button
                       onClick={(e) => {
-                        e.preventDefault()
-                        e.stopPropagation()
-                        window.location.href = "/collections"
+                        e.preventDefault();
+                        e.stopPropagation();
+                        window.location.href = "/collections";
                       }}
                       className="p-2 bg-[#BBA14F] text-black rounded-full hover:bg-[#d4be70] transition-all opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 inline-flex items-center justify-center"
                     >
@@ -795,12 +1057,14 @@ export default function ProductGrid({ initialCategory = null }: ProductGridProps
 
         {/* Load more button */}
         <div className="text-center mt-16">
-          <a href="/collections" className="px-8 py-4 bg-[#BBA14F] text-black font-light text-lg uppercase tracking-widest rounded-lg hover:bg-[#d4be70] transition inline-flex items-center justify-center">
+          <a
+            href="/collections"
+            className="px-8 py-4 bg-[#BBA14F] text-black font-light text-lg uppercase tracking-widest rounded-lg hover:bg-[#d4be70] transition inline-flex items-center justify-center"
+          >
             Load More Products
           </a>
         </div>
       </div>
     </section>
-  )
+  );
 }
-
