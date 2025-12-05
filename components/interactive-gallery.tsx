@@ -43,7 +43,7 @@ const buildItems = () => {
   }
 
   // Limit gallery to 20 images total (mixed from the four folders)
-  return items.slice(0, 20)
+  return items.slice(0, 20);
 };
 
 const products = buildItems();
