@@ -16,7 +16,7 @@ const categories = [
     name: "Makeup",
     description: "Premium cosmetics collection",
     image: "/luxury-makeup-cosmetics-collection.jpg",
-    count: 6,
+    count: 21,
     color: "from-pink-500/20 to-[#BBA14F]/20",
   },
   {
