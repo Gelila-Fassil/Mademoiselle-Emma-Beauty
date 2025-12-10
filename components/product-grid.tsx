@@ -1195,3 +1195,214 @@ export default function ProductGrid({
     </section>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// components/ProductGrid.tsx
+
+// "use client"; 
+
+// import { useEffect, useState, useRef } from "react";
+// import Image from "next/image";
+// import { ShoppingBag, Heart } from "lucide-react";
+// import { useSanityProducts } from "@/hooks/useSanityProducts"; 
+// import { urlFor } from "@/lib/sanity"; 
+// import { SanityProduct, SanityCategory } from "@/types/sanity"; 
+
+// interface ProductGridProps {
+//   initialCategorySlug?: string | null; 
+// }
+
+// export default function ProductGrid({
+//   initialCategorySlug = null,
+// }: ProductGridProps) {
+//   const [isVisible, setIsVisible] = useState(false);
+//   const [selectedCategorySlug, setSelectedCategorySlug] = useState<string | null>(
+//     initialCategorySlug
+//   );
+//   const [hoveredId, setHoveredId] = useState<string | null>(null); 
+//   const sectionRef = useRef<HTMLDivElement>(null);
+
+//   // ⭐️ Call the typed hook ⭐️
+//   const { products, categories, loading, error } = useSanityProducts(selectedCategorySlug);
+
+//   // Intersection Observer for animation (kept from original)
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       ([entry]) => {
+//         if (entry.isIntersecting) {
+//           setIsVisible(true);
+//         }
+//       },
+//       { root: null, rootMargin: "0px", threshold: 0.1 }
+//     );
+//     if (sectionRef.current) {
+//       observer.observe(sectionRef.current);
+//     }
+//     return () => {
+//       if (sectionRef.current) {
+//         observer.unobserve(sectionRef.current);
+//       }
+//     };
+//   }, []);
+
+//   // Loading and Error States
+//   if (loading && products.length === 0) {
+//     return <div className="text-center py-32 text-white">Loading products...</div>
+//   }
+
+//   if (error) {
+//     return <div className="text-center py-32 text-red-500">Error: {error}</div>
+//   }
+
+//   return (
+//     <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
+//       <div className="w-[85%] mx-auto">
+        
+//         {/* Category filter buttons */}
+//         <div className="mb-16">
+//           <div className="flex flex-wrap gap-4 justify-center">
+//             {/* All Products button */}
+//             <button
+//               onClick={() => setSelectedCategorySlug(null)}
+//               className={`px-6 py-3 rounded-full border transition-all ${
+//                 selectedCategorySlug === null
+//                   ? "bg-[#BBA14F] text-black border-[#BBA14F]"
+//                   : "bg-transparent text-white/70 border-[#BBA14F]/20 hover:border-[#BBA14F]/40"
+//               }`}
+//             >
+//               All Products
+//             </button>
+
+//             {/* Dynamic Category buttons from Sanity */}
+//             {categories.map((category: SanityCategory) => (
+//               <button
+//                 key={category.slug} // Fixed TS error
+//                 onClick={() => setSelectedCategorySlug(category.slug)}
+//                 className={`px-6 py-3 rounded-full border transition-all ${
+//                   selectedCategorySlug === category.slug
+//                     ? "bg-[#BBA14F] text-black border-[#BBA14F]"
+//                     : "bg-transparent text-white/70 border-[#BBA14F]/20 hover:border-[#BBA14F]/40"
+//                 }`}
+//               >
+//                 {category.title}
+//               </button>
+//             ))}
+//           </div>
+//         </div>
+
+//         {/* Product grid */}
+//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+//           {products.map((product: SanityProduct, index) => (
+//             <a
+//               key={product.id}
+//               href={`/collections/${product.slug}`}
+//               onMouseEnter={() => setHoveredId(product.id)}
+//               onMouseLeave={() => setHoveredId(null)}
+//               className={`group relative overflow-hidden rounded-2xl border border-[#BBA14F]/20 hover:border-[#BBA14F]/50 transition-all duration-500 cursor-pointer block ${
+//                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+//               } ${hoveredId === product.id ? "scale-105 z-10" : "scale-100"}`}
+//               style={{ transitionDelay: `${index * 50}ms` }}
+//             >
+//               <div className="relative aspect-[3/4] overflow-hidden bg-black/20">
+//                 <Image
+//                   src={urlFor(product.mainImage).width(500).url()} // Fixed image error
+//                   alt={product.name}
+//                   fill
+//                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+//                   className={`object-cover transition-transform duration-700 ${
+//                     hoveredId === product.id ? "scale-110" : "scale-100"
+//                   }`}
+//                 />
+//                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+
+//                 {/* Category badge */}
+//                 <div className="absolute top-4 left-4 px-3 py-1 bg-[#BBA14F]/20 backdrop-blur-sm rounded-full border border-[#BBA14F]/30">
+//                   <span className="text-[#BBA14F] text-xs uppercase tracking-widest font-light">
+//                     {product.category} 
+//                   </span>
+//                 </div>
+                
+//                 <button
+//                   onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
+//                   className={`absolute top-4 right-4 p-2 bg-black/50 rounded-full border border-white/10 transition-all duration-300 ${
+//                     hoveredId === product.id ? "opacity-100" : "opacity-0"
+//                   }`}
+//                   aria-label="Add to wishlist"
+//                 >
+//                   <Heart className="w-5 h-5 text-white/80 hover:text-red-500" />
+//                 </button>
+
+//                 <div className="absolute inset-0 flex flex-col justify-end p-6">
+//                   <h3 className="text-xl font-light text-white mb-2 group-hover:text-[#BBA14F] transition-colors">
+//                     {product.name}
+//                   </h3>
+//                   <div className="flex items-center justify-end">
+//                     <button
+//                       onClick={(e) => {
+//                         e.preventDefault();
+//                         e.stopPropagation();
+//                         window.location.href = `/checkout?productId=${product.id}`;
+//                       }}
+//                       className="p-2 bg-[#BBA14F] text-black rounded-full hover:bg-[#d4be70] transition-all opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 inline-flex items-center justify-center"
+//                       aria-label="Add to cart"
+//                     >
+//                       <ShoppingBag className="w-5 h-5" />
+//                     </button>
+//                   </div>
+//                 </div>
+//               </div>
+//             </a>
+//           ))}
+//         </div>
+
+//         {/* Load more button */}
+//         <div className="text-center mt-16">
+//           <a
+//             href="/collections"
+//             className="px-8 py-4 bg-[#BBA14F] text-black font-light text-lg uppercase tracking-widest rounded-lg hover:bg-[#d4be70] transition inline-flex items-center justify-center"
+//           >
+//             Load More Products
+//           </a>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
