@@ -1,34 +1,37 @@
-// // types/sanity.ts
+// types/sanity.ts
 
-// // 1. Image Asset Interface (Simplified)
-// export interface SanityImage {
-//     _type: 'image';
-//     asset: {
-//         _ref: string;
-//         _type: 'reference';
-//     };
-// }
+// Basic Sanity image type with optional alt text
+export interface SanityImage {
+  _type: "image"
+  asset: {
+    _ref: string
+    _type: "reference"
+  }
+  alt?: string
+}
 
-// // 2. Category Interface (Used for filtering buttons)
-// export interface SanityCategory {
-//     title: string;
-//     slug: string;
-// }
+// Category document
+export interface SanityCategory {
+  title: string
+  slug: string // slug.current
+}
 
-// // 3. Product Interface (Used for the grid items)
-// export interface SanityProduct {
-//     _id: string;
-//     id: string; // Mapped from _id
-//     name: string;
-//     slug: string;
-//     category: string; // The category TITLE (string)
-//     mainImage: SanityImage;
-// }
+// Product document (aligned to provided schema)
+export interface SanityProduct {
+  _id: string
+  id: string // duplicated from _id for UI convenience
+  name: string
+  slug: string // slug.current
+  categoryTitle: string
+  categorySlug: string
+  mainImage: SanityImage
+  price?: number
+  description?: any[]
+}
 
-// // 4. Hook Return Type
-// export interface ProductsHookResult {
-//     products: SanityProduct[];
-//     categories: SanityCategory[];
-//     loading: boolean;
-//     error: string | null;
-// }
+export interface ProductsHookResult {
+  products: SanityProduct[]
+  categories: SanityCategory[]
+  loading: boolean
+  error: string | null
+}
