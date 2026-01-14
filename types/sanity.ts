@@ -35,3 +35,13 @@ export interface ProductsHookResult {
   loading: boolean
   error: string | null
 }
+
+// CEO profile document
+export interface CEOProfile {
+  name: string
+  title: string
+  photo: SanityImage
+  highlightQuote?: string
+  intro?: string
+  body?: string
+}
