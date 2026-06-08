@@ -9,26 +9,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-0 mb-6">
-              <img
-                src="/newbg.png"
-                alt="Mademoiselle Logo"
-                className="object-contain flex-shrink-0"
-                style={{ 
-                  height: '85px', 
-                  width: 'auto',
-                }}
-                onError={(e) => {
-                  // Fallback to JPG if PNG doesn't exist
-                  e.currentTarget.src = '/cosmologo.jpg';
-                }}
-              />
-              <div className="flex flex-col leading-none">
-                <span className="text-white font-bold text-md tracking-[0.1em]">MADEEMMA</span>
-                <span className="text-[#BBA14F] text-[10px] tracking-[0.4em] font-light uppercase mt-0.5">Beauty</span>
-              </div>
+            <div className="flex flex-col leading-none mb-6">
+              <span className="text-white font-bold text-lg tracking-[0.1em]">MADEMOISELLE EMMA</span>
+              <span className="text-[#BBA14F] text-xs tracking-[0.4em] font-light uppercase mt-0.5">BEAUTY</span>
             </div>
-            <p className="text-white/60 text-sm">Elevating beauty standards with premium, luxury cosmetics.</p>
+            <p className="text-white/60 text-sm">Makeup, Perfume &amp; Personal care Elegance for her and him</p>
           </div>
 
           {/* Links */}
@@ -113,7 +98,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-white/60 text-sm">
-          <p>&copy; 2025 Mademoiselle Emma Beauty. All rights reserved.</p>
+          <p>&copy; 2025 MADEMOISELLE EMMA BEAUTY. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-[#BBA14F] transition">
               Privacy Policy

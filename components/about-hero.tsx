@@ -31,7 +31,7 @@ export default function AboutHero() {
               }`}
             >
               <div className="text-sm text-[#BBA14F] uppercase tracking-[0.3em] font-light">
-                About Mademoiselle
+                About MADEMOISELLE EMMA BEAUTY
               </div>
               <h1 className="text-8xl md:text-9xl font-light text-white leading-[0.85]">
                 Crafting

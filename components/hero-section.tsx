@@ -34,8 +34,7 @@ export default function HeroSection() {
               Elevate Your <span className="text-[#BBA14F]">Beauty</span> Ritual
             </h1>
             <p className="text-lg text-white/60 leading-relaxed max-w-lg">
-              Discover our exquisite collection of premium cosmetics, fragrances, and skincare essentials. Each product
-              is carefully crafted to inspire confidence and express your unique elegance.
+              Makeup, Perfume &amp; Personal care Elegance for her and him
             </p>
           </div>
 

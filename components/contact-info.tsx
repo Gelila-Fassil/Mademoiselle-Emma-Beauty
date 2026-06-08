@@ -15,15 +15,15 @@ const contactMethods = [
   {
     icon: Phone,
     title: "Phone",
-    info: "+1 (555) 123-4567",
-    description: "Mon-Fri from 9am to 6pm",
+    info: "+251932361111",
+    description: "or +33615624701",
     image: "/premium-skincare-bottles-and-creams.jpg",
   },
   {
     icon: MapPin,
     title: "Address",
-    info: "123 Luxury Avenue, New York, NY 10001",
-    description: "Visit our flagship store",
+    info: "Dembel City Center",
+    description: "1st floor No 117",
     image: "/luxury-makeup-cosmetics-collection.jpg",
   },
   {

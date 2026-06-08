@@ -55,14 +55,14 @@ export default function CEOMessage() {
     fetchCeoProfile()
   }, [])
 
-  const displayName = ceo?.name || "Sarah Chen"
+  const displayName = ceo?.name || "Emma Desalegn"
   const displayTitle = ceo?.title || "Founder & CEO"
   const displayQuote =
     ceo?.highlightQuote ||
-    `When we started this journey, we had a simple vision: to create beauty products that don't just enhance your appearance, but also respect our planet.`
+    `At MADEMOISELLE EMMA BEAUTY, we believe beauty has no boundaries — it is for her, for him, for everyone who dares to feel extraordinary.`
 
   const defaultBody =
-    "Over the past decade, we've transformed from a small startup into a global leader in sustainable luxury beauty. Our commitment to innovation, quality, and environmental responsibility has never wavered.\n\nWe believe that true beauty comes from harmony—between nature and science, elegance and sustainability, tradition and innovation. Every formulation, every package, every decision we make is guided by this principle."
+    "Our journey began with a simple belief: that makeup, perfume, and personal care should be more than products — they should be an experience. A celebration of individuality. An embrace of elegance for every skin, every style, every story.\n\nFrom the bustling heart of Addis Ababa to the fashion capitals of Europe, we draw inspiration from the vibrant cultures that shape us. Every formula we craft, every scent we bottle, and every product we design reflects our commitment to inclusive luxury. We are not just creating beauty — we are redefining what it means to feel beautiful.\n\nToday, MADEMOISELLE EMMA BEAUTY stands as a bridge between timeless elegance and modern expression. Whether it is a bold lipstick, a captivating perfume, or a nurturing skincare essential, each creation carries our promise: elegance for her and him, crafted with passion, made for the world."
 
   const bodySource = `${ceo?.intro ? `${ceo.intro}\n\n` : ""}${ceo?.body || defaultBody}`
 

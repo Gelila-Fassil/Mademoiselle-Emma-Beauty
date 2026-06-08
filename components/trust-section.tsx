@@ -50,7 +50,7 @@ export default function TrustSection() {
           </div>
           <p className="text-3xl md:text-4xl font-light text-white mb-6 italic text-balance">
             {
-              '"Mademoiselle Emma Beauty transformed my entire skincare routine. The quality is unmatched, and I feel like I\'m treating myself to a luxury experience every day."'
+              '"MADEMOISELLE EMMA BEAUTY transformed my entire skincare routine. The quality is unmatched, and I feel like I\'m treating myself to a luxury experience every day."'
             }
           </p>
           <p className="text-[#BBA14F] font-light uppercase tracking-widest text-sm">
